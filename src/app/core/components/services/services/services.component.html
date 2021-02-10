@@ -1,0 +1,202 @@
+<div (contextmenu)="openCard($event)" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <h2>New Class</h2>
+  <p >
+    We are super excited to find you adding a new activity to your list! Kindly fill the following details:
+  </p>
+  <!-- <p [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="pointer-events:none;" (contextmenu)="openCard($event)">We are super excited to find you adding a new activity to your list! Kindly fill the following details:</p> -->
+  <!-- <mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu> -->
+  <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+    <div style="display: flex; flex-direction: row;">
+      <div>
+        <ul class="example-list">
+          <li (click)="openChild(1)"><span>Itemdddddddddddddd </span> <span class="material-icons">
+            {{ child1 ? 'arrow_right' : 'arrow_drop_up' }}
+            </span></li>
+            <!-- <ul class="example-list" *ngIf="child1">
+              <li>Item 11</li>
+              <li>Item 12</li>
+              <li>Item 13</li>
+            </ul> -->
+          <li (click)="openChild(2)"><span> Item 2 </span><span class="material-icons">
+            arrow_drop_up
+            </span></li>
+            <ul class="example-list" *ngIf="child2">
+              <li>Item 21</li>
+              <li>Item 22</li>
+              <li>Item 23</li>
+            </ul>
+          <li (click)="openChild(3)"><span>Item 3 </span> <span class="material-icons">
+            arrow_drop_up
+            </span></li>
+            <ul class="example-list" *ngIf="child3">
+              <li (click)="openChild(31)">Item 31</li>
+              <li>Item 32</li>
+              <li>Item 33</li>
+            </ul>
+        </ul>
+      </div>
+      <div>
+        <ul class="example-list" *ngIf="child1">
+          <li (click)="openChild(11)">Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+        </ul>
+      </div>
+    </div>
+    
+   
+  </ng-template>
+  <div class="row justify-content-start step-container">
+    <div class="col-md-3 col-4 step-box active">
+      <h6 class="step-title-0"> <span class="break-line"></span> <span class="step-title">1. Overview</span></h6>
+    </div>
+    <div class="curve1"></div>
+    <div class="col-md-3 col-4 step-box inactive">
+      <h6 class="step-title-0"><span class="break-line"></span> <span class="step-title">2. Time $ Schdule</span></h6>
+    </div>
+    <div class="curve2"></div>
+    <div class="col-md-3 col-4 step-box inactive">
+      <h6 class="step-title-0"><span class="break-line"></span> <span class="step-title">3. Pricing & Package</span>
+      </h6>
+    </div>
+    <div class="curve3"></div>
+    <div class="col-md-3 col-4 step-box inactive">
+      <h6 class="step-title-0"><span class="break-line"></span> <span class="step-title">4. Bookings</span> </h6>
+    </div>
+    <div class="curve4"></div>
+    <div class="col-md-3 col-4 step-box inactive">
+      <h6 class="step-title-0"><span class="break-line"></span> <span class="step-title">5. Publish</span> </h6>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="usr">Name of the class</label>
+    <input type="text" class="form-control" [(ngModel)]="usr1" placeholder="Class title" id="usr">
+  </div>
+  <div class="form-group">
+    <label for="sel1">Class Category</label>
+    <select class="form-control" id="sel1" [(ngModel)]="dropdown">
+      <option [value]="1">Adults Yoga</option>
+      <option [value]="2">Kids Yoga</option>
+      <option [value]="3">Flexible Yoga</option>
+      <option [value]="4" selected>No Category</option>
+    </select>
+  </div>
+  <div>
+    <span class="is-link" (click)="open(content)">+ Add another category</span>
+  </div>
+  <div class="form-group">
+    <label for="usr3">Brief describe this class (120 words)</label>
+    <textarea class="form-control" placeholder="Class summary" id="usr3" row="4"></textarea>
+  </div>
+  <div class="radio-btns">
+    <div>
+      <p>Age of your students</p>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" (click)="radioChecked(1)"><span>Everyone</span>
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" (click)="radioChecked(2)"> <span>For Adults</span>
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" (click)="radioChecked(3)"> <span>For Children only
+          (less than 18 years)</span>
+      </label>
+    </div>
+  </div>
+  <div class="age-dropdown" *ngIf="isChildren">
+    <div class="form-group" style="margin-left: 30px;">
+      <label for="sel2">Min. age</label>
+      <select class="form-control" id="sel2" [(ngModel)]="minAge">
+        <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="sel3">Max. age</label>
+      <select class="form-control" id="sel3" [(ngModel)]="maxAge">
+        <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="custom-control custom-checkbox pointer" style="padding-left: 50px;" *ngIf="isChildren">
+    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+    <label class="custom-control-label" for="customCheck" style="padding: 4px 20px;">Request adult presence</label>
+  </div>
+  <p style="margin-top: 40px;">What color code would you like to give?</p>
+  <div class="color-dots">
+    <span class="dot1"></span>
+    <span class="dot2"></span>
+    <span class="dot3"></span>
+    <span class="dot4"></span>
+    <span class="dot5"></span>
+    <span class="dot6"></span>
+    <span class="dot7"></span>
+    <span class="dot8"></span>
+    <span class="dot9"></span>
+    <span class="dot10"></span>
+    <span class="dot11"></span>
+  </div>
+  <div class="toggle-btn">
+    <label class="switch ">
+      <input type="checkbox" class="primary">
+      <span class="slider round"></span>
+
+    </label>
+    <span class="toggle-text">Enable Online booking</span>
+    <i class="fas fa-info" color="primary" data-toggle="tooltip" data-placement="right"
+      title="With online bookings enabled customers can book the class directly on their own"></i>
+  </div>
+  <div class="next-btn" matRipple [matRippleTrigger]="trigger" class="my-ripple-container">
+    <button class="button button5">Go to next step</button>
+    <div #trigger>
+      Hello world
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <ng-template #content let-modal="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Category</h4>
+      <i class="fa fa-times-circle" (click)="modal('close')"></i>
+    </div>
+    <div class="modal-body">
+      <p>Category is used to organise various listed classes together</p>
+      <div class="form-group modal-grp">
+        <label for="usr1">Company Name</label>
+        <input type="text" class="form-control" placeholder="E.g. Dance to organise zumba, hip hop classes under it"
+          id="usr1">
+      </div>
+      <div class="form-group modal-grp">
+        <label for="usr2">Category description (optional)</label>
+        <input type="text" class="form-control" placeholder="Description for customers to know about the category"
+          id="usr2">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark button" (click)="close(modal, alertcontent)">Add
+        Category</button>
+    </div>
+  </ng-template>
+  <ng-template #alertcontent let-modal="dismiss">
+    <div class="modal-header confirm-alert">
+      <i class="fas fa-check-circle"></i>
+      <p><b>"Yoga For Kids"</b> has been added as a new category. <br>You will find it among the options now.</p>
+      <i class="fa fa-times-circle" (click)="modal('close')"></i>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,489 @@
+h2,
+h4 {
+    border-bottom : 3px solid #009fdb;
+    padding-bottom: 11px;
+}
+
+h4 {
+    width: 100%;
+}
+
+body {
+    color            : #000;
+    overflow-x       : hidden;
+    height           : 100%;
+    background       : linear-gradient(180deg, #2196F3 250px, #FFF 250px);
+    background-repeat: no-repeat
+}
+
+.card.show {
+    display: block !important
+}
+
+.card {
+    display         : none;
+    background-color: #E0F7FA;
+    border          : 1px solid #E0F7FA;
+    box-shadow      : 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.step-container {
+    // border-top: 1px solid lightgrey;
+    // border-bottom: 1px solid lightgrey;
+    width           : 80.85%;
+    // margin-top: 70px;
+    // margin-bottom: 50px
+    background      : #c8aa00;
+}
+
+.fa-circle {
+    background-color: lightgrey;
+    color           : #fff;
+    padding         : 2px 3.1555px;
+    border-radius   : 50%
+}
+
+.step-box {
+    padding         : 10px;
+    /* border-left  : 1px solid lightgrey; */
+    border-right    : 3px solid white;
+    background-color: #fff;
+}
+
+.active {
+    background-color: rgb(255, 136, 0);
+    color           : #FFF !important;
+    /* border-left  : 1px solid #2196F3; */
+    /* border-right : 1px solid #2196F3; */
+    border-radius   : 0 30px 30px 0;
+    // margin-left: 9px;
+    // z-index: 2;
+}
+
+.inactive {
+    background-color: rgb(200, 170, 1 / 43%);
+    color           : #3c4252 !important;
+    /* border-left  : 1px solid #2196F3; */
+    /* border-right : 1px solid #2196F3; */
+    border-radius   : 0 30px 30px 0;
+}
+
+.active .fa-circle {
+    background-color: #fff !important;
+    color           : #2196F3
+}
+
+.fa-check {
+    border-radius   : 50%;
+    background-color: #00C853;
+    color           : #fff;
+    padding         : 3px
+}
+
+.step-title-0 {
+    margin-bottom: 0px;
+    padding-left : 10px;
+}
+
+.step-title {
+    font-size  : 13px;
+    position   : relative;
+    margin-left: 4px
+}
+
+
+textarea {
+    height: 100px
+}
+
+button {
+    width         : 120px;
+    letter-spacing: 2px
+}
+
+.fit-image {
+    width     : 100%;
+    object-fit: cover
+}
+
+@media screen and (max-width: 768px) {
+    .break-line {
+        display: block;
+        float  : none
+    }
+}
+
+::ng-deep .row {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : nowrap;
+    margin-right  : 0px;
+    margin-left   : 0px;
+}
+
+#usr,
+#usr1,
+#usr2 {
+    border-radius: 30px;
+    background   : white;
+    border-color : #009fdb;
+    height       : calc(1.5em + 0.75rem + 10px) !important;
+    width        : 97% !important;
+}
+
+#usr3 {
+    border-radius: 17px;
+    background   : white;
+    border-color : #009fdb;
+    width        : 97% !important;
+}
+
+::ng-deep .form-group {
+    width  : 50%;
+    padding: 15px 0;
+}
+
+.modal-grp {
+    width: 100% !important;
+}
+
+label,
+p {
+    font-weight: 500;
+}
+
+::ng-deep .dropdown-toggle::after {
+    position: relative;
+    top     : 10px;
+}
+
+::ng-deep .form-check {
+    padding-top: 10px !important;
+}
+
+.radio-btns {
+    padding-top: 20px;
+
+    .form-check-input {
+        cursor: pointer;
+    }
+
+    span {
+        position: relative;
+        left    : 10px;
+        top     : 2px;
+    }
+}
+
+#sel1 {
+    border-radius: 30px !important;
+    background   : white !important;
+    border-color : #009fdb !important;
+    cursor       : pointer;
+    height       : calc(1.5em + 0.75rem + 10px);
+    width        : 97% !important; 
+        option {
+            margin: 20px;
+            border-radius: 10px;
+        }
+}
+
+#sel2, #sel3 {
+    border-radius: 30px !important;
+    background   : white !important;
+    border-color : #009fdb !important;
+    cursor       : pointer;
+    height       : calc(1.5em + 0.75rem + 10px);
+    width        : 50% !important;
+}
+.age-dropdown {
+    display: flex;
+    flex-direction: row; 
+    .form-group {
+        width: 20%;
+    }
+}
+.custom-control-label::before {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.custom-control-label::after {
+    top: -10px;
+    left: -35px;
+    width: 3em;
+    height: 3em;
+}
+
+.switch {
+    position: relative;
+    display : inline-block;
+    width   : 60px;
+    height  : 34px;
+    float   : left;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+/* The slider */
+.slider {
+    position          : absolute;
+    cursor            : pointer;
+    top               : 0;
+    left              : 0;
+    right             : 0;
+    bottom            : 0;
+    background-color  : #ccc;
+    -webkit-transition: .4s;
+    transition        : .4s;
+}
+
+.slider:before {
+    position          : absolute;
+    content           : "";
+    height            : 26px;
+    width             : 26px;
+    left              : 4px;
+    bottom            : 4px;
+    background-color  : white;
+    -webkit-transition: .4s;
+    transition        : .4s;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform    : translateX(26px);
+    transform        : translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input.primary:checked+.slider {
+    background-color: #2196F3;
+}
+
+.toggle-btn {
+    padding-top: 20px;
+
+    .toggle-text,
+    .fa-info {
+        position   : relative;
+        top        : 5px;
+        font-weight: 500;
+    }
+}
+
+.toggle-text {
+    padding    : 20px;
+    font-weight: 400;
+    font-size  : 1rem;
+}
+
+.tooltip-custom {
+    padding   : 20px;
+    background: #009fdb;
+    color     : white;
+    font-size : 12px;
+}
+
+.tooltip-inner {
+    background-color: #009fdb;
+}
+
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: #009fdb !important;
+}
+
+.tooltip.bs-tooltip-left .arrow:before {
+    border-right-color: #009fdb !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-right-color: #009fdb !important;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+    border-right-color: #009fdb !important;
+}
+
+::ng-deep .fa-info {
+    color: #009fdb;
+}
+
+.button {
+    background-color: rgb(255, 136, 0);
+    border          : none;
+    color           : white;
+    padding         : 15px;
+    text-align      : center;
+    text-decoration : none;
+    display         : block;
+    font-size       : 15px;
+    margin          : 4px 2px;
+    border-radius   : 40px;
+    width           : 179px;
+}
+
+.next-btn {
+    padding: 40px 0;
+}
+
+::ng-deep .modal-footer {
+    justify-content: center;
+}
+
+::ng-deep .modal-dialog {
+    max-width: 650px !important;
+    padding  : 20px;
+}
+
+::ng-deep .modal-content {
+    padding: 20px 30px 20px 30px !important;
+}
+
+::ng-deep .fa-times-circle {
+    font-size : 20px !important;
+    color     : #ff6245;
+    // background: red;
+    cursor: pointer;
+}
+
+::ng-deep .modal-footer,
+.modal-header {
+    border-top   : none !important;
+    border-bottom: none !important;
+}
+
+input[type=radio] {
+    width : 20px;
+    height: 20px;
+}
+
+// .curve1, .curve2, .curve3, .curve4 {
+//     position: absolute;
+//     top: 137px;
+//     transform: translate(-50%, -50%);
+//     transform: rotate(90deg);
+//     height: 25px;
+//     width: 37px;
+//     border-radius: 150px 150px 0 0;
+//     background-color: white;
+//     z-index: 1;
+// }
+// .curve1 {
+//     left: 36.6%;
+// }
+::ng-deep .sel1::after {
+    margin: 20px;
+}
+
+.confirm-alert {
+    padding: 0;
+
+    .fa-check-circle {
+        font-size: 50px;
+        color    : rgb(255, 136, 0);
+    }
+
+    p {
+        width: 80%;
+    }
+}
+.dot1, .dot2, .dot3, .dot4, .dot5, .dot6, .dot7, .dot8, .dot9, .dot10, .dot11 {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot1 {
+    background-color: darkturquoise;
+  }
+  .dot2 {
+    background-color: cornflowerblue;
+  }
+  .dot3 {
+    background-color: teal;
+  }
+  .dot4 {
+    background-color: lightseagreen;
+  }
+  .dot5 {
+    background-color: lightgreen;
+  }
+  .dot6 {
+    background-color: olive;
+  }
+  .dot7 {
+    background-color: #ffc107;
+  }
+  .dot8 {
+    background-color: orange;
+  }
+  .dot9 {
+    background-color: #aa1074;
+  }
+  .dot10 {
+    background-color: #720072c9;
+  }
+  .dot11 {
+    background-color: #6f706db3;
+  }
+
+.color-dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 20px;
+    span {
+        margin-left: 30px;   
+    }
+}
+
+.example-list {
+    min-width: 151px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    background-color: #3c4252;
+    color: white;
+  }
+  
+  .example-list > li {
+    list-style-type: none;
+    // border-bottom: solid 1px #8b8b8b;
+    // border-top: solid 1px #8b8b8b;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &:hover {
+        background: rgba(0, 0, 0, 0.1);
+        color: #ffffff;
+      }
+  }
+  
+  .example-list > li:last-child {
+    border-bottom: none;
+  }
+   ::ng-deep .material-icons {
+    position: relative;
+    // left: 34px;
+    top: 7px;
+   }
